@@ -11,25 +11,65 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    var statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
+    let noDNSServerSetImage = NSImage(named:NSImage.Name("StatusBarButtonImage"))
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        let currentDNS = getDNS()
+        statusItem.length = 100
         if let button = statusItem.button {
-            button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
             button.action = #selector(runExecutable)
+            if let currentDNSString = currentDNS {
+                button.title = currentDNSString
+            } else {
+                resetButtonToDefaultImage()
+            }
         }
         
     }
     
-    @objc func runExecutable() {
-        let path = "/bin/bash"
-        let arguments: [String] = ["/usr/local/bin/toggleDNS"]
-        print("going to start process")
-        let process = Process.launchedProcess(launchPath: path, arguments: arguments)
-        print("created process")
-        process.waitUntilExit()
-        print("finished process")
+    func getDNS() -> String? {
+        let getDNSPath = "/usr/local/bin/getDNS"
+        let getDNSProcess = Process()
+        getDNSProcess.launchPath = getDNSPath
+        let pipe = Pipe()
+        getDNSProcess.standardOutput = pipe
+        getDNSProcess.launch()
+        getDNSProcess.waitUntilExit()
+        let fileData = pipe.fileHandleForReading.readDataToEndOfFile()
+        if let stringifiedFileData = String(data: fileData, encoding: String.Encoding.utf8)?.trimEverything {
+            return stringifiedFileData
+        } else {
+            return nil
+        }
     }
     
+    func resetButtonToDefaultImage() {
+        statusItem.title = nil
+        statusItem.image = noDNSServerSetImage
+    }
+    
+    @objc func runExecutable() {
+        
+        let toggleDNSPath = "/usr/local/bin/toggleDNS"
+        let toggleDNSProcess = Process.launchedProcess(launchPath: toggleDNSPath, arguments: [])
+        toggleDNSProcess.waitUntilExit()
+        
+        let newDNS = getDNS()
+        if let newDNSString = newDNS {
+            statusItem.title = newDNSString
+        } else {
+            resetButtonToDefaultImage()
+        }
+    }
+    
+    
+    
+}
+
+fileprivate extension String {
+    var trimEverything: String {
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
 }
 
