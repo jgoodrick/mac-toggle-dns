@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C6B4FC2207686C600AFF0E9 /* DNSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC1207686C600AFF0E9 /* DNSMenu.swift */; };
+		7C6B4FC42076884E00AFF0E9 /* DNSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC32076884E00AFF0E9 /* DNSMenuItem.swift */; };
+		7C6B4FC620768A6600AFF0E9 /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */; };
+		7C6B4FC820768D6000AFF0E9 /* DNSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC720768D6000AFF0E9 /* DNSManager.swift */; };
+		7C6B4FCC2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FCB2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift */; };
+		7C6B4FCF2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FCE2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift */; };
 		7C865A6E20659DFC00274D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C865A6D20659DFC00274D06 /* AppDelegate.swift */; };
 		7C865A7220659DFC00274D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C865A7120659DFC00274D06 /* Assets.xcassets */; };
 		7C865A7520659DFC00274D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C865A7320659DFC00274D06 /* Main.storyboard */; };
+		7C8DD0F8206AEF8800EB81A7 /* DNSMenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEBDEA6206AD3EA00D39BAB /* DNSMenuItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C6B4FC1207686C600AFF0E9 /* DNSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenu.swift; sourceTree = "<group>"; };
+		7C6B4FC32076884E00AFF0E9 /* DNSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenuItem.swift; sourceTree = "<group>"; };
+		7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
+		7C6B4FC720768D6000AFF0E9 /* DNSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSManager.swift; sourceTree = "<group>"; };
+		7C6B4FCB2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DNSManager+AppLifecycle.swift"; sourceTree = "<group>"; };
+		7C6B4FCE2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DNSManager+ActionHandler.swift"; sourceTree = "<group>"; };
 		7C865A6A20659DFC00274D06 /* ToggleDNS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToggleDNS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C865A6D20659DFC00274D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C865A7120659DFC00274D06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C865A7420659DFC00274D06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C865A7620659DFC00274D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C865A7720659DFC00274D06 /* ToggleDNS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ToggleDNS.entitlements; sourceTree = "<group>"; };
+		7CEBDEA6206AD3EA00D39BAB /* DNSMenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenuItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +46,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C6B4FC92076A3A000AFF0E9 /* StatusItemMenu */ = {
+			isa = PBXGroup;
+			children = (
+				7C6B4FC1207686C600AFF0E9 /* DNSMenu.swift */,
+				7C6B4FC32076884E00AFF0E9 /* DNSMenuItem.swift */,
+				7CEBDEA6206AD3EA00D39BAB /* DNSMenuItemView.swift */,
+			);
+			path = StatusItemMenu;
+			sourceTree = "<group>";
+		};
+		7C6B4FCA2076A3CE00AFF0E9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7C6B4FCD2077E97800AFF0E9 /* DNSManager */ = {
+			isa = PBXGroup;
+			children = (
+				7C6B4FC720768D6000AFF0E9 /* DNSManager.swift */,
+				7C6B4FCE2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift */,
+				7C6B4FCB2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift */,
+			);
+			path = DNSManager;
+			sourceTree = "<group>";
+		};
 		7C865A6120659DFC00274D06 = {
 			isa = PBXGroup;
 			children = (
@@ -52,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				7C865A6D20659DFC00274D06 /* AppDelegate.swift */,
+				7C6B4FCD2077E97800AFF0E9 /* DNSManager */,
+				7C6B4FC92076A3A000AFF0E9 /* StatusItemMenu */,
+				7C6B4FCA2076A3CE00AFF0E9 /* Utilities */,
 				7C865A7120659DFC00274D06 /* Assets.xcassets */,
 				7C865A7320659DFC00274D06 /* Main.storyboard */,
 				7C865A7620659DFC00274D06 /* Info.plist */,
@@ -87,7 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "G.O.O.D. Corp";
 				TargetAttributes = {
 					7C865A6920659DFC00274D06 = {
@@ -136,7 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C6B4FCF2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift in Sources */,
 				7C865A6E20659DFC00274D06 /* AppDelegate.swift in Sources */,
+				7C8DD0F8206AEF8800EB81A7 /* DNSMenuItemView.swift in Sources */,
+				7C6B4FCC2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift in Sources */,
+				7C6B4FC620768A6600AFF0E9 /* ScriptRunner.swift in Sources */,
+				7C6B4FC42076884E00AFF0E9 /* DNSMenuItem.swift in Sources */,
+				7C6B4FC2207686C600AFF0E9 /* DNSMenu.swift in Sources */,
+				7C6B4FC820768D6000AFF0E9 /* DNSManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +220,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -175,6 +228,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -225,6 +279,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -232,6 +287,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

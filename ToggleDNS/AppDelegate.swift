@@ -8,68 +8,66 @@
 
 import Cocoa
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    var statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-    let noDNSServerSetImage = NSImage(named:NSImage.Name("StatusBarButtonImage"))
+    let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
+    let dnsManager: DNSManager = DNSManager()
+    lazy var menu: DNSMenu = DNSMenu(with: dnsManager)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        let currentDNS = getDNS()
-        statusItem.length = 100
         if let button = statusItem.button {
-            button.action = #selector(runExecutable)
-            if let currentDNSString = currentDNS {
-                button.title = currentDNSString
+            button.action = #selector(mouseClickHandler(sender:))
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+        }
+        updateUI()
+    }
+    
+    func updateUI() {
+        if let topServer = dnsManager.currentDNS?.components(separatedBy: " ").first {
+            if topServer != "" {
+                statusItem.title = topServer
             } else {
-                resetButtonToDefaultImage()
+                statusItem.image = NSImage(named:NSImage.Name("StatusBarIcon"))
             }
-        }
-        
-    }
-    
-    func getDNS() -> String? {
-        let getDNSPath = "/usr/local/bin/getDNS"
-        let getDNSProcess = Process()
-        getDNSProcess.launchPath = getDNSPath
-        let pipe = Pipe()
-        getDNSProcess.standardOutput = pipe
-        getDNSProcess.launch()
-        getDNSProcess.waitUntilExit()
-        let fileData = pipe.fileHandleForReading.readDataToEndOfFile()
-        if let stringifiedFileData = String(data: fileData, encoding: String.Encoding.utf8)?.trimEverything {
-            return stringifiedFileData
         } else {
-            return nil
+            statusItem.image = NSImage(named:NSImage.Name("StatusBarIcon"))
         }
     }
     
-    func resetButtonToDefaultImage() {
-        statusItem.title = nil
-        statusItem.image = noDNSServerSetImage
-    }
-    
-    @objc func runExecutable() {
+    @objc func mouseClickHandler(sender: NSStatusItem) {
         
-        let toggleDNSPath = "/usr/local/bin/toggleDNS"
-        let toggleDNSProcess = Process.launchedProcess(launchPath: toggleDNSPath, arguments: [])
-        toggleDNSProcess.waitUntilExit()
+        let event = NSApp.currentEvent!
         
-        let newDNS = getDNS()
-        if let newDNSString = newDNS {
-            statusItem.title = newDNSString
+        if event.type == NSEvent.EventType.rightMouseUp {
+            statusItem.popUpMenu(menu)
         } else {
-            resetButtonToDefaultImage()
+            //TODO: - Currently, the right click is being sent to clicking the "Go!" menu item with the right mouse button
+            dnsManager.toggle()
+            updateUI()
         }
+        
     }
     
+    ///Clears the servers in the System Preferences list (begin using router default)
+    @objc func clearServersToDefault() {
+        dnsManager.currentDNS = "empty"
+        updateUI()
+    }
+
+    func dismissMenu() {
+        menu.cancelTracking()
+    }
     
+    @objc func terminateApp() {
+        dnsManager.terminate()
+        NSApplication.shared.terminate(self)
+    }
+
     
 }
 
-fileprivate extension String {
-    var trimEverything: String {
-        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-    }
-}
+
+
 
