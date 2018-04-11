@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DNSMenuItem: NSMenuItem {
+class DNSMenuItem: NSMenuItem, NSMenuDelegate {
     let dnsManager: DNSManager
     let dnsView: DNSMenuItemView
     init(with dnsManager: DNSManager) {
