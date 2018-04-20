@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0B2C24208A798C00DED4C6 /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0B2C23208A798C00DED4C6 /* ScriptRunner.swift */; };
 		7C6B4FC2207686C600AFF0E9 /* DNSMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC1207686C600AFF0E9 /* DNSMenu.swift */; };
 		7C6B4FC42076884E00AFF0E9 /* DNSMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC32076884E00AFF0E9 /* DNSMenuItem.swift */; };
-		7C6B4FC620768A6600AFF0E9 /* ScriptRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */; };
 		7C6B4FC820768D6000AFF0E9 /* DNSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FC720768D6000AFF0E9 /* DNSManager.swift */; };
 		7C6B4FCC2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FCB2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift */; };
 		7C6B4FCF2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6B4FCE2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift */; };
@@ -20,9 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C0B2C23208A798C00DED4C6 /* ScriptRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
 		7C6B4FC1207686C600AFF0E9 /* DNSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenu.swift; sourceTree = "<group>"; };
 		7C6B4FC32076884E00AFF0E9 /* DNSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenuItem.swift; sourceTree = "<group>"; };
-		7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScriptRunner.swift; path = ../../../utilities/ScriptRunner.swift; sourceTree = "<group>"; };
 		7C6B4FC720768D6000AFF0E9 /* DNSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSManager.swift; sourceTree = "<group>"; };
 		7C6B4FCB2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DNSManager+AppLifecycle.swift"; sourceTree = "<group>"; };
 		7C6B4FCE2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DNSManager+ActionHandler.swift"; sourceTree = "<group>"; };
@@ -46,6 +46,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C0B2C22208A796D00DED4C6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7C0B2C23208A798C00DED4C6 /* ScriptRunner.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		7C6B4FC92076A3A000AFF0E9 /* StatusItemMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +62,6 @@
 				7CEBDEA6206AD3EA00D39BAB /* DNSMenuItemView.swift */,
 			);
 			path = StatusItemMenu;
-			sourceTree = "<group>";
-		};
-		7C6B4FCA2076A3CE00AFF0E9 /* Utilities External to Project */ = {
-			isa = PBXGroup;
-			children = (
-				7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */,
-			);
-			path = "Utilities External to Project";
 			sourceTree = "<group>";
 		};
 		7C6B4FCD2077E97800AFF0E9 /* DNSManager */ = {
@@ -96,7 +96,7 @@
 				7C865A6D20659DFC00274D06 /* AppDelegate.swift */,
 				7C6B4FCD2077E97800AFF0E9 /* DNSManager */,
 				7C6B4FC92076A3A000AFF0E9 /* StatusItemMenu */,
-				7C6B4FCA2076A3CE00AFF0E9 /* Utilities External to Project */,
+				7C0B2C22208A796D00DED4C6 /* Utilities */,
 				7C865A7120659DFC00274D06 /* Assets.xcassets */,
 				7C865A7320659DFC00274D06 /* Main.storyboard */,
 				7C865A7620659DFC00274D06 /* Info.plist */,
@@ -185,7 +185,7 @@
 				7C865A6E20659DFC00274D06 /* AppDelegate.swift in Sources */,
 				7C8DD0F8206AEF8800EB81A7 /* DNSMenuItemView.swift in Sources */,
 				7C6B4FCC2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift in Sources */,
-				7C6B4FC620768A6600AFF0E9 /* ScriptRunner.swift in Sources */,
+				7C0B2C24208A798C00DED4C6 /* ScriptRunner.swift in Sources */,
 				7C6B4FC42076884E00AFF0E9 /* DNSMenuItem.swift in Sources */,
 				7C6B4FC2207686C600AFF0E9 /* DNSMenu.swift in Sources */,
 				7C6B4FC820768D6000AFF0E9 /* DNSManager.swift in Sources */,
