@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		7C6B4FC1207686C600AFF0E9 /* DNSMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenu.swift; sourceTree = "<group>"; };
 		7C6B4FC32076884E00AFF0E9 /* DNSMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSMenuItem.swift; sourceTree = "<group>"; };
-		7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptRunner.swift; sourceTree = "<group>"; };
+		7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScriptRunner.swift; path = ../../../utilities/ScriptRunner.swift; sourceTree = "<group>"; };
 		7C6B4FC720768D6000AFF0E9 /* DNSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNSManager.swift; sourceTree = "<group>"; };
 		7C6B4FCB2077E6AC00AFF0E9 /* DNSManager+AppLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DNSManager+AppLifecycle.swift"; sourceTree = "<group>"; };
 		7C6B4FCE2077EBE800AFF0E9 /* DNSManager+ActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DNSManager+ActionHandler.swift"; sourceTree = "<group>"; };
@@ -56,12 +56,12 @@
 			path = StatusItemMenu;
 			sourceTree = "<group>";
 		};
-		7C6B4FCA2076A3CE00AFF0E9 /* Utilities */ = {
+		7C6B4FCA2076A3CE00AFF0E9 /* Utilities External to Project */ = {
 			isa = PBXGroup;
 			children = (
 				7C6B4FC520768A6600AFF0E9 /* ScriptRunner.swift */,
 			);
-			path = Utilities;
+			path = "Utilities External to Project";
 			sourceTree = "<group>";
 		};
 		7C6B4FCD2077E97800AFF0E9 /* DNSManager */ = {
@@ -96,7 +96,7 @@
 				7C865A6D20659DFC00274D06 /* AppDelegate.swift */,
 				7C6B4FCD2077E97800AFF0E9 /* DNSManager */,
 				7C6B4FC92076A3A000AFF0E9 /* StatusItemMenu */,
-				7C6B4FCA2076A3CE00AFF0E9 /* Utilities */,
+				7C6B4FCA2076A3CE00AFF0E9 /* Utilities External to Project */,
 				7C865A7120659DFC00274D06 /* Assets.xcassets */,
 				7C865A7320659DFC00274D06 /* Main.storyboard */,
 				7C865A7620659DFC00274D06 /* Info.plist */,
